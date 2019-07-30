@@ -1,0 +1,23 @@
+{
+    "name": "cordova-plugin-apple-authentication-ka",
+    "version": "1.0.0",
+    "description": "Cordova plugin for Apple Authentication",
+    "cordova": {
+      "id": "cordova-plugin-apple-authentication-ka",
+      "platforms": [
+        "ios"
+      ]
+    },
+    "repository": {
+      "type": "git",
+      "url": "git+https://github.com/kanodeveloper/cordova-plugin-apple-authentication-ka.git"
+    },
+    "author": "Kano Apps (opensource@kanoapps.com)",
+    "license": "MIT",
+    "homepage": "https://github.com/kanodeveloper/cordova-plugin-apple-authentication-ka",
+    "keywords": [
+      "cordova",
+      "apple",
+      "authentication"
+    ]
+  }
