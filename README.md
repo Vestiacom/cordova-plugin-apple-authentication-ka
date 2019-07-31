@@ -1,6 +1,6 @@
-# apple.auth Plugin
+# cordova.apple.auth Plugin
 
-This plugin provides Apple Sign In authentication for iOS 13.
+This plugin provides Apple Sign In authentication for Cordova on iOS 13.
 
 ## Status
 
