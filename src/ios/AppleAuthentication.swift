@@ -24,12 +24,16 @@ import AuthenticationServices
     }
 
     @objc func authorizationController(controller: ASAuthorizationController, didCompleteWithAuthorization authorization: ASAuthorization) {
-        guard let credentials = authorization.credential as? ASAuthorizationAppleIDCredential else { return }
-
-        let pluginResult = CDVPluginResult(
-          status: CDVCommandStatus_OK,
-          messageAs: credentials.authorizationCode?.base64EncodedString()
+        var pluginResult = CDVPluginResult(
+            status: CDVCommandStatus_ERROR
         )
+        if let credentials = authorization.credential as? ASAuthorizationAppleIDCredential {
+            pluginResult = CDVPluginResult(
+                status: CDVCommandStatus_OK,
+                messageAs: [credentials.user,
+                                    String(data: credentials.identityToken!, encoding: .utf8)]
+            )
+        }
 
         self.commandDelegate.send(
           pluginResult,
