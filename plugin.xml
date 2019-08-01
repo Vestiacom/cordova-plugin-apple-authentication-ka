@@ -26,6 +26,19 @@ xmlns:android="http://schemas.android.com/apk/res/android"
                 <param name="onload" value="true" />
             </feature>
         </config-file>
+
+        <config-file target="*Entitlements-Debug.plist" parent="com.apple.developer.applesignin">
+            <array>
+                <string>Default</string>
+            </array>
+        </config-file>
+
+        <config-file target="*Entitlements-Release.plist" parent="com.apple.developer.applesignin">
+            <array>
+                <string>Default</string>
+            </array>
+        </config-file>
+
         <header-file src="src/ios/AppleAuthentication-Bridging-Header.h"/>
         <source-file src="src/ios/AppleAuthentication.swift"/>
         <framework src="AuthenticationServices.framework" />
