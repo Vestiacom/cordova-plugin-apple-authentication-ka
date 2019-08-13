@@ -15,8 +15,8 @@ xmlns:android="http://schemas.android.com/apk/res/android"
     </js-module>
 
     <engines>
-        <engine name="cordova" version=">=9.0.0"/>
-        <engine name="cordova-ios" version=">=5.0.0"/>
+        <engine name="cordova" version=">=7.0.0"/>
+        <engine name="cordova-ios" version=">=4.5.0"/>
     </engines>
 
     <platform name="ios">
