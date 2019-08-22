@@ -3,6 +3,15 @@ var PLUGIN_NAME = "AppleAuthentication";
 
 module.exports = {
     getToken: function(success, error) {
-        exec(success, error, PLUGIN_NAME, "getToken", []);
+        function modelData() {
+            success({
+                email: arguments[0],
+                fullName: arguments[1],
+                userId: arguments[2],
+                identityToken: arguments[3],
+                authorizationCode: arguments[4]
+            });
+        }
+        exec(modelData, error, PLUGIN_NAME, "getToken", []);
     }
 };

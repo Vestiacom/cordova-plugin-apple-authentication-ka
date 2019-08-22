@@ -28,10 +28,25 @@ import AuthenticationServices
             status: CDVCommandStatus_ERROR
         )
         if let credentials = authorization.credential as? ASAuthorizationAppleIDCredential {
+            var fullName = ""
+            if let nameUnwrapped = credentials.fullName {
+                fullName = (nameUnwrapped.givenName ?? "") + " " + (nameUnwrapped.familyName ?? "")
+            }
+
+            var authorizationCode = ""
+            if let codeUnwrapped = credentials.authorizationCode {
+                authorizationCode = String(data: codeUnwrapped, encoding: .utf8) ?? ""
+            }
+
             pluginResult = CDVPluginResult(
                 status: CDVCommandStatus_OK,
-                messageAs: [credentials.user,
-                                    String(data: credentials.identityToken!, encoding: .utf8)]
+                messageAs: [
+                                    credentials.email ?? "",
+                                    fullName,
+                                    credentials.user,
+                                    String(data: credentials.identityToken!, encoding: .utf8),
+                                    authorizationCode
+                ]
             )
         }
 
