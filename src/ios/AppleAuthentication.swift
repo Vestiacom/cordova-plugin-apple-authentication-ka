@@ -42,7 +42,7 @@ import AuthenticationServices
                 status: CDVCommandStatus_OK,
                 messageAs: [
                                     credentials.email ?? "",
-                                    fullName,
+                                    fullName == " " ? nil : fullName,
                                     credentials.user,
                                     String(data: credentials.identityToken!, encoding: .utf8),
                                     authorizationCode
